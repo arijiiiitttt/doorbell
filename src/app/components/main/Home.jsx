@@ -224,7 +224,7 @@ export default function Home() {
             {useCases.map((useCase, index) => (
               <div
                 key={index}
-                className="p-6 rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-200 hover:border-red-500 border border-transparent"
+                className="p-6 rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-200  border border-transparent"
               >
                 <div className="flex items-center mb-4">
                   {useCase.icon}
