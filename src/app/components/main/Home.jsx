@@ -12,10 +12,11 @@ import {
   MdClose,
   MdChatBubble,
   MdPeople,
-  MdLiveHelp, // Changed FAQ Icon
-  MdWorkspaces, // Changed Use Cases Icon
+  MdLiveHelp, 
+  MdWorkspaces, 
 } from "react-icons/md";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import Link from 'next/link'; 
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,8 +93,8 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans antialiased transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-6 md:px-20 py-10">
         {/* Header */}
-        <header className="flex justify-between items-center py-6 sticky top-0 bg-gray-50 z-50">
-          <a href="/" className="text-3xl font-bold">Doorbell</a>
+        <header className="flex justify-between items-center py-6 sticky top-0 bg-gray-50 z-50" id="">
+          <Link href="/doorbell" className="text-3xl font-bold">Doorbell</Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -108,9 +109,9 @@ export default function Home() {
             <a href="#features" className="hover:text-red-600">Features</a>
             <a href="#use-cases" className="hover:text-red-600">Use Cases</a>
             <a href="#faq" className="hover:text-red-600">FAQ</a>
-            <button className="px-4 py-2 bg-red-100 text-gray-600 rounded-lg hover:bg-red-200 flex items-center">
+            <Link href='/doorbell' className="px-4 py-2 bg-red-100 text-gray-600 rounded-lg hover:bg-red-200 flex items-center">
               Find Someone Now <MdSearch className="ml-2" />
-            </button>
+            </Link>
           </nav>
         </header>
 
@@ -126,18 +127,19 @@ export default function Home() {
             <a href="#faq" className="hover:text-red-600" onClick={toggleMenu}>
               FAQ
             </a>
-            <button
+            <Link
+              href='/doorbell'
               onClick={toggleMenu}
               className="px-4 py-2 bg-red-100 text-gray-600 rounded-lg hover:bg-red-200 flex items-center"
             >
               Find Someone Now <MdSearch className="ml-2" />
-            </button>
+            </Link>
           </div>
         )}
 
 
         {/* Hero Section */}
-        <section className="text-center my-10">
+        <section className="text-center my-10" id="hero">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
             Connect Globally With One Ring {" "}
             <span className="text-red-600">Doorbell</span>
@@ -147,10 +149,10 @@ export default function Home() {
             chats. Doorbell makes it easy to connect with strangers from around
             the globe.
           </p>
-          <button className="mt-6 px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-500 transition-colors duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center mx-auto">
-            Start Chatting{" "}
+          <Link href='/doorbell' className="inline-flex items-center justify-center px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-500 transition-colors duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+            Start Chatting
             <MdRocket className="ml-2 h-5 w-5 inline-block" />
-          </button>
+          </Link>
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-500">
             <span>Random Chat</span>
             <span>Video Calls</span>
@@ -287,10 +289,10 @@ export default function Home() {
             Join the Doorbell community and start connecting with interesting
             people from around the world.
           </p>
-          <button className="px-8 py-4 bg-white text-red-600 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center mx-auto">
-            Ring the Doorbell{" "}
+          <Link href='/doorbell' className="inline-flex items-center justify-center px-8 py-4 bg-white text-red-600 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+            Ring the Doorbell
             <MdRocket className="ml-2 h-5 w-5 inline-block" />
-          </button>
+          </Link>
           <div className="mt-4 flex justify-center items-center">
             <MdThumbUp className="mr-2 h-6 w-6" />
             <p className="text-sm">Thousands of connections made daily!</p>
@@ -307,10 +309,10 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center gap-4 mb-6 text-sm">
             <a href="" className="hover:text-red-600">Privacy Policy</a>
-            <a href="" className="hover:text-red-600">Terms of Service</a>
+            <a href="/termsofservice" className="hover:text-red-600">Terms of Service</a>
             <a href="" className="hover:text-red-600">Contact Us</a>
             <a href="" className="hover:text-red-600">Careers</a>
-            <a href="" className="hover:text-red-600">Back to Top</a>
+            <a href="#hero" className="hover:text-red-600">Back to Top</a>
           </div>
           <p>© {new Date().getFullYear()} Doorbell. All rights reserved.</p>
         </footer>
