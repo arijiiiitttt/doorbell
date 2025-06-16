@@ -24,7 +24,7 @@ import { SiNextdotjs, SiTailwindcss, SiWebrtc, SiVercel } from "react-icons/si";
 
 
 
-export default function Home() {
+export default function DoorbellPg() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
